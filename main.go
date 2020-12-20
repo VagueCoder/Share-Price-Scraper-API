@@ -16,7 +16,7 @@ type File struct {
 }
 
 func filename() string {
-	dtlayout := "02-01-2006 3:04:05 PM"
+	dtlayout := "02-01-2006 3-04-05 PM"
 	return "Share-Price-Scraper-API Export " + time.Now().Format(dtlayout) + ".csv"
 }
 
@@ -28,8 +28,10 @@ func (file *File) HomePage(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	fmt.Fprintf(writer, "<div style=\"border-radius: 25px;padding:20px;margin:150px;width:1000px;background-color:#b3d9ff;border: 5px solid #004080;\"><h1 style=\"color:004080;font-family:Apple Chancery,cursive;text-align:center;\">The file '%s' should start downloading shortly.</h1></div>", file.name)
-	time.Sleep(8 * time.Second)
-	http.Redirect(writer, request, "/download", 200)
+	// time.Sleep(8 * time.Second)
+	http.Redirect(writer, request, "/download", 302)
+
+	return
 }
 
 func (file *File) FileDownloadClient(writer http.ResponseWriter, request *http.Request) {

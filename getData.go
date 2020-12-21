@@ -121,5 +121,5 @@ func deleteCSV(filename string) {
     if err != nil {
         fmt.Println("OS Error: File Removal failed with error: ", err)
     }
-    fmt.Println(filename, " Deleted")
+    fmt.Println(filename, "\t\tDeleted\t\t", time.Now())
 }

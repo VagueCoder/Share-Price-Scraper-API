@@ -5,6 +5,8 @@ import (
 	"os"
 	"fmt"
 	"time"
+	"bufio"
+	"strings"
 	"strconv"
 	"syscall"
 	"net/http"
@@ -22,6 +24,30 @@ func filename() string {
 	return "Share-Price-Scraper-API Export " + time.Now().Format(dtlayout) + ".csv"
 }
 
+func getStatus(statusfile string) string {
+	file, err := os.Open(statusfile)
+    if err != nil {
+        fmt.Printf("OS Error: Failed to read file %s with error: %v\n", statusfile, err)
+	}
+	defer file.Close()
+
+	var lines []string
+	scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        lines = append(lines, strings.TrimSpace(scanner.Text()))
+    }
+	
+	pointer := 1
+	for true {
+		if lines[len(lines)-pointer] == "" {
+			pointer++
+		} else {
+			break
+		}
+	}
+   	return lines[len(lines)-pointer]
+}
+
 func main() {
 	file := &File{}
 	var filenames []string
@@ -30,21 +56,22 @@ func main() {
 	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 	go func() {
 		<-c
-		fmt.Println("\rCtrl+C pressed in Terminal")
 		for _, file := range filenames {
 			deleteCSV("DataStore/"+file)
 		}
+		fmt.Println("\rClosing Gracefully!")
 		os.Exit(0)
 	}()
 	
-	fmt.Println("Filename\t\tRequest Type\t\tTimestamp")
 	router := mux.NewRouter()
 	router.HandleFunc("/", 
 		func(writer http.ResponseWriter, request *http.Request) {
 			file.name = filename()
 			filenames = append(filenames, file.name)
 			createCSV("DataStore/"+file.name)
-			fmt.Fprintf(writer, "<div style=\"border-radius: 25px;padding:20px;margin:150px;width:1000px;background-color:#b3d9ff;border: 5px solid #004080;\"><p style=\"color:004080;margin:0;padding:0;font-family:Apple Chancery,cursive;text-align:center;font-size:30px;\">Click: <a href=\"/download\">%s</a></p><br><p style=\"color:red;font-family:Apple Chancery,cursive;text-align:center;margin:0;padding:0;font-size:20px;\">Note: You can download the file multiple times. Reload the Page to download the latest file.</p></div>", file.name)
+
+			html := "<div style=\"font-family:Apple Chancery,cursive;text-align:center;border-radius:25px;padding:20px;margin:150px;width:1000px;border: 5px solid #004080;\"><p style=\"color:004080;margin:0;padding:0;font-size:30px;\">Click: <a href=\"/download\">%s</a></p><br><button id=\"status\" style=\"font-size:15px;border-radius:5px;margin:10px;padding:10px;background-color:#b3d9ff;border:3px solid #004080;\">Click Here for Current Scraper Status</button><script>document.getElementById(\"status\").onclick = function(){alert(\"%s\");}</script><br><p style=\"color:red;font-family:Apple Chancery,cursive;text-align:center;margin:0;padding:0;font-size:20px;\">Note: You can download the file multiple times till you reload. Reloading the page gives latest file.</p></div>"
+			fmt.Fprintf(writer, html, file.name, getStatus("DataStore/stats.txt"))
 		
 			return
 		},
@@ -52,7 +79,7 @@ func main() {
 
 	router.HandleFunc("/download", 
 		func(writer http.ResponseWriter, request *http.Request) {
-			fmt.Printf("DataStore/%+v\t\tDownloaded\t\t%v\n", file.name, time.Now())
+			fmt.Printf("\rDataStore/%+v\t\tDownloaded\t\t%v\n", file.name, time.Now())
 			Openfile, err := os.Open("DataStore/"+file.name)
 			defer Openfile.Close()
 			if err != nil {
@@ -76,6 +103,7 @@ func main() {
 			return
 		},
 	)
+	fmt.Println("The application is up and listening on port 8000.")
+	fmt.Println("\rFilename\t\tRequest Type\t\tTimestamp")
 	fmt.Printf("HTTP Error: Error at Listen and Server: %v", http.ListenAndServe(":8000", router))
-
 }

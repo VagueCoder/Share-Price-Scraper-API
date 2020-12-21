@@ -114,6 +114,7 @@ func createCSV(filename string) {
 		}
 	}
 	writer.Flush()
+	fmt.Printf("\r%s\t\tCreated\t\t\t%v\n", filename, time.Now())
 }
 
 func deleteCSV(filename string) {
@@ -121,5 +122,5 @@ func deleteCSV(filename string) {
     if err != nil {
         fmt.Println("OS Error: File Removal failed with error: ", err)
     }
-    fmt.Println(filename, "\t\tDeleted\t\t", time.Now())
+    fmt.Printf("\r%s\t\tDeleted\t\t\t%v\n", filename, time.Now())
 }

@@ -1,0 +1,16 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Aaswa Trading and Exports",
+		"DISPID": "ATE02",
+		"pricecurrent": 15.43,
+		"pricechange": 0.73,
+		"pricepercentchange": 4.966,
+		"HP": 15.43,
+		"LP": 15.43,
+		"VOL": 3086,
+		"lastupd": "2013-12-27T11:22:16+05:30"
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ATE02",
+	"lastscraped": "2020-12-19T17:38:26.0709692+05:30"
+}

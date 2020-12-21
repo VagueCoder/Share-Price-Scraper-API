@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "AAR COMMERCIAL COMPANY ",
+		"DISPID": "AAR",
+		"pricecurrent": 6.02,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 6.02,
+		"LP": 6.02,
+		"VOL": 1,
+		"lastupd": "2020-08-31T16:00:00+05:30",
+		"lower_circuit_limit": 5.46,
+		"upper_circuit_limit": 6.02
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AAR",
+	"lastscraped": "2020-12-19T17:38:24.6367058+05:30"
+}

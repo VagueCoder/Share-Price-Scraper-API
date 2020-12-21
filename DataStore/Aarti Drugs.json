@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Aarti Drugs",
+		"DISPID": "AD",
+		"pricecurrent": 741.85,
+		"pricechange": -10.65,
+		"pricepercentchange": -1.4153,
+		"HP": 769.5,
+		"LP": 740,
+		"VOL": 57370,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 602,
+		"upper_circuit_limit": 903
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AD",
+	"lastscraped": "2020-12-19T17:38:25.1429329+05:30"
+}

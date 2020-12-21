@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Aamcol Tools",
+		"DISPID": "AT01",
+		"pricecurrent": 40.65,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 41.65,
+		"LP": 40.65,
+		"VOL": 100,
+		"lastupd": "2020-12-17T16:00:00+05:30",
+		"lower_circuit_limit": 38.65,
+		"upper_circuit_limit": 42.65
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AT01",
+	"lastscraped": "2020-12-19T17:38:24.0943284+05:30"
+}

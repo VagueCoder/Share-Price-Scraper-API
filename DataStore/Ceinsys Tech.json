@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Ceinsys Tech",
+		"DISPID": "AI28",
+		"pricecurrent": 143.95,
+		"pricechange": 0.7,
+		"pricepercentchange": 0.4887,
+		"HP": 147.4,
+		"LP": 136.1,
+		"VOL": 1013,
+		"lastupd": "2020-12-18T16:00:00+05:30",
+		"lower_circuit_limit": 136.1,
+		"upper_circuit_limit": 150.4
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AI45",
+	"lastscraped": "2020-12-19T17:38:25.2413787+05:30"
+}

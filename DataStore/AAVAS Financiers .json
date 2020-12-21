@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "AAVAS Financiers ",
+		"DISPID": "AF17",
+		"pricecurrent": 1657.3,
+		"pricechange": -15.55,
+		"pricepercentchange": -0.9296,
+		"HP": 1719,
+		"LP": 1608,
+		"VOL": 4460,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 1338.3,
+		"upper_circuit_limit": 2007.4
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AF32",
+	"lastscraped": "2020-12-19T17:38:28.8659823+05:30"
+}

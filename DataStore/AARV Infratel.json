@@ -1,0 +1,16 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "AARV Infratel",
+		"DISPID": "N05",
+		"pricecurrent": 2.25,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 2.25,
+		"LP": 2.25,
+		"VOL": 0,
+		"lastupd": "1970-01-01T00:00:00+05:30"
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/N05",
+	"lastscraped": "2020-12-19T17:38:25.4566424+05:30"
+}

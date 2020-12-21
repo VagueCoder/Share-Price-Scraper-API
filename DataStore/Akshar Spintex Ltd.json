@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Akshar Spintex Ltd",
+		"DISPID": "ASL",
+		"pricecurrent": 13,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 14,
+		"LP": 13,
+		"VOL": 12000,
+		"lastupd": "2020-12-17T16:00:00+05:30",
+		"lower_circuit_limit": 12.7,
+		"upper_circuit_limit": 14
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ASL08",
+	"lastscraped": "2020-12-19T17:38:25.3429903+05:30"
+}

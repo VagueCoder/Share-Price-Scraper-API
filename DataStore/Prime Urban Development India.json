@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Prime Urban Development India",
+		"DISPID": "PT10",
+		"pricecurrent": 6.68,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 6.68,
+		"LP": 6.68,
+		"VOL": 1000,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 6.35,
+		"upper_circuit_limit": 7.01
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ATL",
+	"lastscraped": "2020-12-19T17:38:23.260867+05:30"
+}

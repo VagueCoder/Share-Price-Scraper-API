@@ -1,0 +1,16 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Abco Plastics",
+		"DISPID": "AP17",
+		"pricecurrent": 1.05,
+		"pricechange": -0.05,
+		"pricepercentchange": -4.5455,
+		"HP": 1.1,
+		"LP": 1.05,
+		"VOL": 10830,
+		"lastupd": "2013-12-27T11:22:16+05:30"
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AP17",
+	"lastscraped": "2020-12-19T17:38:28.1949561+05:30"
+}

@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Aditya Birla Fashion \u0026 Retail - RE",
+		"DISPID": "ABF",
+		"pricecurrent": 9.6,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 11.2,
+		"LP": 5,
+		"VOL": 424116,
+		"lastupd": "2020-07-17T16:00:02+05:30",
+		"lower_circuit_limit": 4.9,
+		"upper_circuit_limit": 11.3
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ABF",
+	"lastscraped": "2020-12-19T17:38:26.745974+05:30"
+}

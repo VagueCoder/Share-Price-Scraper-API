@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "ABC Bearings",
+		"DISPID": "ABC02",
+		"pricecurrent": 437.65,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 444,
+		"LP": 425,
+		"VOL": 3119,
+		"lastupd": "2018-08-21T15:41:56+05:30",
+		"lower_circuit_limit": 349.5,
+		"upper_circuit_limit": 524.2
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ABC02",
+	"lastscraped": "2020-12-19T17:38:27.812355+05:30"
+}

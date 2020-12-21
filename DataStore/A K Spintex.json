@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "A K Spintex",
+		"DISPID": "AKS01",
+		"pricecurrent": 23.1,
+		"pricechange": 1.1,
+		"pricepercentchange": 5,
+		"HP": 23.1,
+		"LP": 23.1,
+		"VOL": 51,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 20.9,
+		"upper_circuit_limit": 23.1
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AKS01",
+	"lastscraped": "2020-12-19T17:38:22.6646523+05:30"
+}

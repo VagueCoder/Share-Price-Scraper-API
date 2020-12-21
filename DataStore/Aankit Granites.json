@@ -1,0 +1,14 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Aankit Granites",
+		"DISPID": "AGL",
+		"pricecurrent": 0,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"VOL": 0,
+		"lastupd": "2013-12-27T11:22:16+05:30"
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AGL",
+	"lastscraped": "2020-12-19T17:38:24.4805741+05:30"
+}

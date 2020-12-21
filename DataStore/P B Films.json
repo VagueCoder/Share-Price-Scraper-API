@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "P B Films",
+		"DISPID": "F01",
+		"pricecurrent": 0.68,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 0.68,
+		"LP": 0.68,
+		"VOL": 30000,
+		"lastupd": "2019-12-10T16:00:02+05:30",
+		"lower_circuit_limit": 0.68,
+		"upper_circuit_limit": 0.82
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/F03",
+	"lastscraped": "2020-12-19T17:38:21.6135696+05:30"
+}

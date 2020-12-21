@@ -21,22 +21,15 @@ func filename() string {
 }
 
 func (file *File) HomePage(writer http.ResponseWriter, request *http.Request) {
-	fmt.Printf("%+v", file)
-	_, err := os.Create(file.name)
-	if err != nil {
-		fmt.Printf("OS Error: File Creation Failed, %s\n", file.name)
-	}
-
-	fmt.Fprintf(writer, "<div style=\"border-radius: 25px;padding:20px;margin:150px;width:1000px;background-color:#b3d9ff;border: 5px solid #004080;\"><h1 style=\"color:004080;font-family:Apple Chancery,cursive;text-align:center;\">The file '%s' should start downloading shortly.</h1></div>", file.name)
-	// time.Sleep(8 * time.Second)
-	http.Redirect(writer, request, "/download", 302)
+	createCSV("DataStore/"+file.name)
+	fmt.Fprintf(writer, "<div style=\"border-radius: 25px;padding:20px;margin:150px;width:1000px;background-color:#b3d9ff;border: 5px solid #004080;\"><p style=\"color:004080;margin:0;padding:0;font-family:Apple Chancery,cursive;text-align:center;font-size:30px;\">Click: <a href=\"/download\">%s</a></p><br><p style=\"color:red;font-family:Apple Chancery,cursive;text-align:center;margin:0;padding:0;font-size:20px;\">Note: You can download the file multiple times. Reload the Page to download the latest file.</p></div>", file.name)
 
 	return
 }
 
 func (file *File) FileDownloadClient(writer http.ResponseWriter, request *http.Request) {
 	fmt.Printf("%+v", file)
-	Openfile, err := os.Open(file.name)
+	Openfile, err := os.Open("DataStore/"+file.name)
 	defer Openfile.Close()
 	if err != nil {
 		http.Error(writer, "File not found.", 404)
@@ -57,6 +50,7 @@ func (file *File) FileDownloadClient(writer http.ResponseWriter, request *http.R
 	Openfile.Seek(0, 0)
 	io.Copy(writer, Openfile)
 
+	deleteCSV("DataStore/"+file.name)
 	return
 }
 

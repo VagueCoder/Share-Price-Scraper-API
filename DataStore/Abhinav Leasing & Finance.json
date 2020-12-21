@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Abhinav Leasing \u0026 Finance",
+		"DISPID": "ALF03",
+		"pricecurrent": 0.6,
+		"pricechange": 0,
+		"pricepercentchange": 0,
+		"HP": 0.61,
+		"LP": 0.6,
+		"VOL": 18008,
+		"lastupd": "2020-12-17T16:00:01+05:30",
+		"lower_circuit_limit": 0.57,
+		"upper_circuit_limit": 0.61
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ALF03",
+	"lastscraped": "2020-12-19T17:38:28.6610283+05:30"
+}

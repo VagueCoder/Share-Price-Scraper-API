@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Black Rose Industries",
+		"DISPID": "BRI01",
+		"pricecurrent": 131.5,
+		"pricechange": 1.25,
+		"pricepercentchange": 0.9597,
+		"HP": 132,
+		"LP": 128.2,
+		"VOL": 48582,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 104.2,
+		"upper_circuit_limit": 156.3
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AF17",
+	"lastscraped": "2020-12-19T17:38:26.1541217+05:30"
+}

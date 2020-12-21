@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "Aayush Food and Herbs",
+		"DISPID": "AFH01",
+		"pricecurrent": 33.1,
+		"pricechange": -0.85,
+		"pricepercentchange": -2.5037,
+		"HP": 35.1,
+		"LP": 32.45,
+		"VOL": 2060,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 32.3,
+		"upper_circuit_limit": 35.6
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/AFH01",
+	"lastscraped": "2020-12-19T17:38:26.2428128+05:30"
+}

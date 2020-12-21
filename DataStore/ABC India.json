@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"data": {
+		"SC_FULLNM": "ABC India",
+		"DISPID": "ABC",
+		"pricecurrent": 59.75,
+		"pricechange": -0.25,
+		"pricepercentchange": -0.4167,
+		"HP": 62,
+		"LP": 58.25,
+		"VOL": 2334,
+		"lastupd": "2020-12-18T16:00:01+05:30",
+		"lower_circuit_limit": 48,
+		"upper_circuit_limit": 72
+	},
+	"url": "https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/ABC",
+	"lastscraped": "2020-12-19T17:38:28.0515048+05:30"
+}

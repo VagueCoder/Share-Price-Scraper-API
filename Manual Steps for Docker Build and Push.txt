@@ -1,0 +1,7 @@
+docker build -t vaguecoder/share-price-scraper-api:1.0.0 .
+docker tag vaguecoder/share-price-scraper-api:1.0.0 vaguecoder/share-price-scraper-api:latest
+
+docker push vaguecoder/share-price-scraper-api:1.0.0
+docker push vaguecoder/share-price-scraper-api:latest
+
+docker run -d --rm --name=share-price-scraper-api -v Shared:/DataStore -p 8000:8000 vaguecoder/share-price-scraper-api:latest

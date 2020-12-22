@@ -43,14 +43,14 @@ func (fi *FlexInt) UnmarshalJSON(b []byte) (err error) {
 	return
 }
 
-func createCSV(filename string) {
+func createCSV(file *File) {
 	var count int = 0
 	var record Collection
 	var dtlayout string = "02-01-2006 3:04:05 PM"
 
-	csvFile, err := os.Create(filename)
+	csvFile, err := os.Create(file.directory + file.name)
 	if err != nil {
-		fmt.Printf("OS Error: File Creation Failed, %s\n", filename)
+		fmt.Printf("OS Error: File Creation Failed, %s\n", file.directory + file.name)
 	}
 	defer csvFile.Close()
 
@@ -71,30 +71,30 @@ func createCSV(filename string) {
 		"Last Scraper",
 	})
 
-	files, err := ioutil.ReadDir("DataStore")
+	files, err := ioutil.ReadDir(file.directory)
 	if err != nil {
 		fmt.Printf("IO Error: Error at Reading the Directory. %v\n", err)
 	}
 
-	for _, file := range files {
-		if strings.HasSuffix(file.Name(), ".json") {
+	for _, temp_file := range files {
+		if strings.HasSuffix(temp_file.Name(), ".json") {
 			var row []string
 			count++
 
-			jsonFile, err := os.Open("DataStore/" + file.Name())
+			jsonFile, err := os.Open(file.directory + temp_file.Name())
 			if err != nil {
-				fmt.Printf("IO Error: Error at Accessing the JSON file DataStore/%s. %v\n", file.Name(), err)
+				fmt.Printf("IO Error: Error at Accessing the JSON file %s%s. %v\n", file.directory, temp_file.Name(), err)
 			}
 			defer jsonFile.Close()
 	
 			byteData, err := ioutil.ReadAll(jsonFile)
 			if err != nil {
-				fmt.Printf("IO Error: Error at Reading the JSON file DataStore/%s. %v\n", file.Name(), err)
+				fmt.Printf("IO Error: Error at Reading the JSON file %s%s. %v\n", file.directory, temp_file.Name(), err)
 			}
 	
 			err = json.Unmarshal(byteData, &record)
 			if err != nil {
-				fmt.Printf("JSON Error: Error at Unmarshal of the JSON file DataStore/%s. %v\n", file.Name(), err)
+				fmt.Printf("JSON Error: Error at Unmarshal of the JSON file %s%s. %v\n", file.directory, temp_file.Name(), err)
 			}
 			row = append(row, strconv.Itoa(count))
 			row = append(row, record.Data.Name)
@@ -114,13 +114,13 @@ func createCSV(filename string) {
 		}
 	}
 	writer.Flush()
-	fmt.Printf("\r%s\t\tCreated\t\t\t%v\n", filename, time.Now())
+	fmt.Printf("\r%s\t\tCreated\t\t\t%v\n", file.directory + file.name, time.Now())
 }
 
-func deleteCSV(filename string) {
-	err := os.Remove(filename)
+func deleteCSV(file *File) {
+	err := os.Remove(file.directory + file.name)
     if err != nil {
-        fmt.Println("OS Error: File Removal failed with error: ", err)
+        fmt.Printf("OS Error: File %s Removal failed with error: %v", file.name, err)
     }
-    fmt.Printf("\r%s\t\tDeleted\t\t\t%v\n", filename, time.Now())
+    fmt.Printf("\r%s\t\tDeleted\t\t\t%v\n", file.directory + file.name, time.Now())
 }
